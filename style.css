@@ -1,0 +1,182 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: hsl(210, 46%, 95%);
+}
+
+.container {
+    height: 350px;
+    width: 900px;
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+}
+
+.article-image {
+    width: 900px;
+}
+
+#drawer-image {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+}
+
+.article-info {
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+.description {
+    text-align: left;
+    font-weight: 500;
+}
+
+h1 {
+    font-weight: 700;
+    color: hsl(217, 19%, 35%);
+}
+
+.paragraph {
+    margin-top: 5%;
+    font-size: 13px;
+    line-height: 20px;
+    color: hsl(214, 17%, 51%);
+    width: 375px;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 75px;
+    width:450px;
+    margin-top: 7%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+#avatar-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.name-date {
+    margin-right: 30%;
+    line-height: 20px;
+}
+
+.avatar-name {
+    font-weight: 700;
+    color: hsl(217, 19%, 35%);
+}
+
+.avatar-date {
+    color: hsl(214, 17%, 51%);
+}
+
+#share {
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    color: hsl(214, 17%, 51%);
+    background-color: hsl(210, 46%, 95%);
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    transition: 0.2s ease;
+}
+
+#share:hover, svg:hover {
+    color: hsl(210, 46%, 95%);
+    background-color: hsl(214, 17%, 51%);
+}
+
+#modal {
+    position: absolute;
+    z-index: 100;
+    max-width: 80%;
+    width: 250px;
+    height: 50px;
+    background-color: hsl(217, 19%, 35%);
+    top: 50%;
+    left: 52%;
+    transform: translate(85% ,35%) scale(0);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 10px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+#modal::before {
+    position: absolute;
+    content: '';
+    height: 15px;
+    width: 15px;
+    background: hsl(217, 19%, 35%);
+    top: 40px;
+    left: 109px;
+    transform: skew(0, 32deg);
+}
+
+#modal::after {
+    position: absolute;
+    content: '';
+    height: 15px;
+    width: 15px;
+    background: hsl(217, 19%, 35%);
+    top: 40px;
+    left: 123px;
+    transform: skew(0, -32deg);
+}
+
+#modal.active {
+    transform: translate(85% ,35%) scale(1);
+    pointer-events: auto;
+}
+
+h2 {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: hsl(212, 23%, 69%);
+}
+
+.share-icons {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+@media screen and(max-width: 400px) {
+    .container {
+        height: 90%;
+        max-width: 80%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+    }
+}
